@@ -1,0 +1,24 @@
+[package]
+name = "lucky-sol"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "lucky_sol"
+
+[features]
+no-entrypoint = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = {version= "0.30.1", features= ["init-if-needed"]}
+anchor-spl = {version = "0.30.1", features = ["metadata"]}
+spl-token = "4.0.0"
+solana-program = "1.16.27"
+bytemuck = "1.7.2"
+mpl-token-metadata = "5.1.0"
